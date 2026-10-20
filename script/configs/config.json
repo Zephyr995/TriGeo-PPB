@@ -1,0 +1,40 @@
+{
+  "features": {
+    "top_k": 20,
+    "max_residues": 400
+  },
+  "model": {
+    "hidden_dim": 64,
+    "pool_hidden": 64,
+    "readout": "dual",
+    "dual_use_z": true,
+    "i3nn_instance_norm": true,
+    "node_stem": "mlp",
+    "num_interact_layers": 2,
+    "interface_pool": false,
+    "interface_tau": 8.0
+  },
+  "train": {
+    "epochs": 50,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "patience": 10,
+    "grad_accum": 8,
+    "use_amp": true,
+    "gpu": 5,
+    "max_pair": 200000,
+    "lr_schedule": "cosine",
+    "warmup_epochs": 2,
+    "lr_min": 1e-06,
+    "ema_decay": 0.999
+  },
+  "inference": {
+    "use_amp": true,
+    "amp_dtype": "bfloat16"
+  },
+  "node_input_dim": 1289,
+  "label_stats": {
+    "mean": -10.25439453125,
+    "std": 2.6204354763031006
+  }
+}
